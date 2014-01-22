@@ -1,14 +1,22 @@
 package ca.ualberta.cs.lonelytwitter;
 
-public class normalTweetModel extends lonelyTweetModel {
+public class NormalTweetModel extends LonelyTweetModel {
 
-	public normalTweetModel(String text) {
+	public NormalTweetModel(String text) {
 		super(text);
+	}
+	
+	public NormalTweetModel() {
+		super();
 	}
 
 	@Override
 	public void setText(String text) {
 		
+	}
+	
+	public String toString() {
+		return this.getText() + " -- " + this.getTimestamp().toString();
 	}
 	
 	@Override
