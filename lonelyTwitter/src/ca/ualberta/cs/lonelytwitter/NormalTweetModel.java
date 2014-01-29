@@ -11,10 +11,6 @@ public class NormalTweetModel extends LonelyTweetModel {
 	public NormalTweetModel(String text) {
 		super(text);
 	}
-	
-	public String getText() {
-		return text;
-	}
 
 	@Override
 	public Date getTimestamp() {

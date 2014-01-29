@@ -6,7 +6,9 @@ public abstract class LonelyTweetModel {
 	protected String text;
 	protected Date timestamp;
 	
-	abstract public String getText();
+	public String getText() {
+		return text;
+	}
 	
 	public LonelyTweetModel(String text) {
 		super();
@@ -37,6 +39,6 @@ public abstract class LonelyTweetModel {
 
 		LonelyTweetModel otherTweet = (LonelyTweetModel) other;
 		
-		return timestamp.equals(otherTweet.timestamp) && getText().equals(otherTweet.getText());
+		return timestamp.equals(otherTweet.timestamp) && text.equals(otherTweet.text);
 	}
 }
