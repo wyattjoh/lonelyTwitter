@@ -13,7 +13,7 @@ public class ImportantTweetModel extends LonelyTweetModel {
 	}
 	
 	public String getText() {
-		return "Important! " + super.getText();
+		return "Important! " + text;
 	}
 
 	@Override

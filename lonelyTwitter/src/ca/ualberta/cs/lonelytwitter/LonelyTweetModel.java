@@ -3,12 +3,10 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 public abstract class LonelyTweetModel {
-	private String text;
+	protected String text;
 	protected Date timestamp;
 	
-	public String getText() {
-		return text;
-	}
+	abstract public String getText();
 	
 	public LonelyTweetModel(String text) {
 		super();
@@ -36,8 +34,9 @@ public abstract class LonelyTweetModel {
 		if (other == null || !(other instanceof LonelyTweetModel)) {
 			return false;
 		}
-		
+
 		LonelyTweetModel otherTweet = (LonelyTweetModel) other;
-		return timestamp.equals(otherTweet.timestamp) && text.equals(otherTweet.text);
+		
+		return timestamp.equals(otherTweet.timestamp) && getText().equals(otherTweet.getText());
 	}
 }
