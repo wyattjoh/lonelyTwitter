@@ -26,6 +26,34 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<NormalTweetModel> tweets;
 	private ArrayAdapter<NormalTweetModel> adapter;
 	
+	/**
+	 * @return the tweets
+	 */
+	public ArrayList<NormalTweetModel> getTweets() {
+		return tweets;
+	}
+
+	/**
+	 * @param tweets the tweets to set
+	 */
+	public void setTweets(ArrayList<NormalTweetModel> tweets) {
+		this.tweets = tweets;
+	}
+
+	/**
+	 * @return the adapter
+	 */
+	public ArrayAdapter<NormalTweetModel> getAdapter() {
+		return adapter;
+	}
+
+	/**
+	 * @param adapter the adapter to set
+	 */
+	public void setAdapter(ArrayAdapter<NormalTweetModel> adapter) {
+		this.adapter = adapter;
+	}
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +73,9 @@ public class LonelyTwitterActivity extends Activity {
 				saveInFile(tweet);
 				tweets.add(tweet);
 				adapter.notifyDataSetChanged();
+				
+				//clear editText box
+				bodyText.setText("");
 			}
 		});
 	}
